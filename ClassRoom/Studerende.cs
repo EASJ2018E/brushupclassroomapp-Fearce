@@ -9,7 +9,14 @@ namespace ClassRoom
     class Studerende
     {
         public string Navn { get; private set; }
-        public int Fødselsdagsmåned { get; set; }   
+        public int Fødselsdagsmåned { get; private set; }
+        public int Fødselsdagsår { get; private set; }
 
+        public Studerende(string navn, int fødselsdagsmåned, int fødselsdagsår)
+        {
+            Navn = navn;
+            Fødselsdagsmåned = fødselsdagsmåned;
+            Fødselsdagsår = fødselsdagsår;
+        }
     }
 }
