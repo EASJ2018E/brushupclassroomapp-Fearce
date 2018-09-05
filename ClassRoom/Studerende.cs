@@ -15,6 +15,10 @@ namespace ClassRoom
         public Studerende(string navn, int fødselsdagsmåned, int fødselsdagsår)
         {
             Navn = navn;
+            if (fødselsdagsmåned < 1 || fødselsdagsmåned > 12)
+            {
+                Console.WriteLine("Wrong month in student creation");
+            }
             Fødselsdagsmåned = fødselsdagsmåned;
             Fødselsdagsår = fødselsdagsår;
         }
