@@ -17,7 +17,7 @@ namespace ClassRoom
             Navn = navn;
             if (fødselsdagsmåned < 1 || fødselsdagsmåned > 12)
             {
-                Console.WriteLine("Wrong month in student creation of student: " + navn);
+                throw new ArgumentException("Måned skal være mellem 1 og 12", "fødselsdagsmåned");
             }
             else
             {
