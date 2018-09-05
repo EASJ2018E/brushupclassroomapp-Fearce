@@ -17,9 +17,12 @@ namespace ClassRoom
             Navn = navn;
             if (fødselsdagsmåned < 1 || fødselsdagsmåned > 12)
             {
-                Console.WriteLine("Wrong month in student creation");
+                Console.WriteLine("Wrong month in student creation of student: " + navn);
             }
-            Fødselsdagsmåned = fødselsdagsmåned;
+            else
+            {
+                Fødselsdagsmåned = fødselsdagsmåned;
+            }
             Fødselsdagsår = fødselsdagsår;
         }
 
