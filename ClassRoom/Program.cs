@@ -21,7 +21,13 @@ namespace ClassRoom
             {
                 Console.WriteLine(student);
             }
+
+
+            klasse.PrintÅrstider();
+
             Console.ReadKey();
+
+
 
         }
     }
