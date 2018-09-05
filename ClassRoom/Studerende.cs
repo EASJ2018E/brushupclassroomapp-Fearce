@@ -18,5 +18,10 @@ namespace ClassRoom
             Fødselsdagsmåned = fødselsdagsmåned;
             Fødselsdagsår = fødselsdagsår;
         }
+
+        public override string ToString()
+        {
+            return $"{nameof(Navn)}: {Navn}, {nameof(Fødselsdagsmåned)}: {Fødselsdagsmåned}, {nameof(Fødselsdagsår)}: {Fødselsdagsår}";
+        }
     }
 }

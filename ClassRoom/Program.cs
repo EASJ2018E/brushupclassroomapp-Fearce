@@ -17,6 +17,11 @@ namespace ClassRoom
             klasse.KlasseListe.Add(new Studerende("Kevin", 11, 93));
             klasse.KlasseListe.Add(new Studerende("Michael", 1, 91));
 
+            foreach (var student in klasse.KlasseListe)
+            {
+                Console.WriteLine(student);
+            }
+            Console.ReadKey();
 
         }
     }
