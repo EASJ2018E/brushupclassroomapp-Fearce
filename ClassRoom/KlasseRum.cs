@@ -60,7 +60,8 @@ namespace ClassRoom
                 }
             }
 
-            Console.WriteLine($"{antalVinter} elever om vinteren, {antalForår} om foråret, {antalSommer} om sommeren og {antalEfterår} om efteråret");
+            Console.WriteLine(
+                $"{antalVinter} elever om vinteren, {antalForår} om foråret, {antalSommer} om sommeren og {antalEfterår} om efteråret");
         }
 
         public void PrintÅrstiderLinq()
@@ -75,10 +76,30 @@ namespace ClassRoom
                 KlasseListe.Count(x => x.Fødselsdagsmåned == 6 || x.Fødselsdagsmåned == 7 || x.Fødselsdagsmåned == 8) +
                 " elever om sommeren");
             Console.WriteLine(
-                KlasseListe.Count(x => x.Fødselsdagsmåned == 9 || x.Fødselsdagsmåned == 10 || x.Fødselsdagsmåned == 11) +
+                KlasseListe.Count(x =>
+                    x.Fødselsdagsmåned == 9 || x.Fødselsdagsmåned == 10 || x.Fødselsdagsmåned == 11) +
                 " elever om efteråret");
 
         }
 
+        public void PrintÅrstiderLinqReal()
+        {
+            var antalVinter = from c in KlasseListe
+                where c.Fødselsdagsmåned == 1 || c.Fødselsdagsmåned == 2 || c.Fødselsdagsmåned == 12
+                select c;
+            var antalForår = from c in KlasseListe
+                where c.Fødselsdagsmåned == 3 || c.Fødselsdagsmåned == 4 || c.Fødselsdagsmåned == 5
+                select c;
+            var antalSommer = from c in KlasseListe
+                where c.Fødselsdagsmåned == 6 || c.Fødselsdagsmåned == 7 || c.Fødselsdagsmåned == 8
+                select c;
+            var antalEfterår = from c in KlasseListe
+                where c.Fødselsdagsmåned == 9 || c.Fødselsdagsmåned == 10 || c.Fødselsdagsmåned == 11
+                select c;
+            Console.WriteLine(antalVinter.Count() + " elever om vinteren");
+            Console.WriteLine(antalForår.Count() + " elever om foråret");
+            Console.WriteLine(antalSommer.Count() + " elever om sommeren");
+            Console.WriteLine(antalEfterår.Count() + " elever om efteråret");
+        }
     }
 }
