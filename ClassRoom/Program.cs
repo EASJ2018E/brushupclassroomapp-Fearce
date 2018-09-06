@@ -17,15 +17,16 @@ namespace ClassRoom
             klasse.KlasseListe.Add(new Studerende("Kevin", 11, 93));
             klasse.KlasseListe.Add(new Studerende("Michael", 1, 91));
             //klasse.KlasseListe.Add(new Studerende("Michael", 13, 91)); //giver exception
-            Console.WriteLine("/n printer antallet af årstider");
+            Console.WriteLine("\n printer antallet af årstider");
             klasse.PrintAntalÅrstider(); //
-            Console.WriteLine("/n printer årstiderne");
+            Console.WriteLine("\n printer årstiderne");
             klasse.PrintÅrstider();
-            Console.WriteLine("/n printer antallet af årstider linq");
+            Console.WriteLine("\n printer antallet af årstider linq");
 
             klasse.PrintÅrstiderLinq();
-            Console.WriteLine("/n");
+            Console.WriteLine("\n printer de sturendes info");
 
+           
             foreach (var student in klasse.KlasseListe)
             {
                 Console.WriteLine(student);
