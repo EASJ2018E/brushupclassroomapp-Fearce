@@ -16,14 +16,6 @@ namespace ClassRoom
         {
             KlasseListe = new List<Studerende>();
         }
-        /* Der skal nu implementeres en metode som tæller op for klassen hvor mange der har fødselsdag i hver årstid. Denne metode returnerer ikke noget, men skal bare skrive resultatet ud i konsollen 
-           Hvor skal denne metode ligge ?
-           
-           hint. se om du kan kode det via et linq statement
-           
-           Kald metoden.
-           
-           Husk at comitte og pushe til Git repo (GitHub). :octocat:*/
 
         public void PrintÅrstider()
         {
@@ -33,7 +25,7 @@ namespace ClassRoom
             }
         }
 
-        public void AntalÅrstider()
+        public void PrintAntalÅrstider()
         {
             int antalVinter = 0;
             int antalForår = 0;
@@ -69,6 +61,23 @@ namespace ClassRoom
             }
 
             Console.WriteLine($"{antalVinter} elever om vinteren, {antalForår} om foråret, {antalSommer} om sommeren og {antalEfterår} om efteråret");
+        }
+
+        public void PrintÅrstiderLinq()
+        {
+            Console.WriteLine(
+                KlasseListe.Count(x => x.Fødselsdagsmåned == 1 || x.Fødselsdagsmåned == 2 || x.Fødselsdagsmåned == 12) +
+                " elever om vinteren");
+            Console.WriteLine(
+                KlasseListe.Count(x => x.Fødselsdagsmåned == 3 || x.Fødselsdagsmåned == 4 || x.Fødselsdagsmåned == 5) +
+                " elever om foråret");
+            Console.WriteLine(
+                KlasseListe.Count(x => x.Fødselsdagsmåned == 6 || x.Fødselsdagsmåned == 7 || x.Fødselsdagsmåned == 8) +
+                " elever om sommeren");
+            Console.WriteLine(
+                KlasseListe.Count(x => x.Fødselsdagsmåned == 9 || x.Fødselsdagsmåned == 10 || x.Fødselsdagsmåned == 11) +
+                " elever om efteråret");
+
         }
 
     }
