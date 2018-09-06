@@ -33,5 +33,43 @@ namespace ClassRoom
             }
         }
 
+        public void AntalÅrstider()
+        {
+            int antalVinter = 0;
+            int antalForår = 0;
+            int antalSommer = 0;
+            int antalEfterår = 0;
+            foreach (var s in KlasseListe)
+            {
+                switch (s.Fødselsdagsmåned)
+                {
+                    case 12:
+                    case 1:
+                    case 2:
+                        antalVinter++;
+                        break;
+                    case 3:
+                    case 4:
+                    case 5:
+                        antalForår++;
+                        break;
+                    case 6:
+                    case 7:
+                    case 8:
+                        antalSommer++;
+                        break;
+                    case 9:
+                    case 10:
+                    case 11:
+                        antalEfterår++;
+                        break;
+                    default:
+                        throw new ArgumentException("Fejl i måned");
+                }
+            }
+
+            Console.WriteLine($"{antalVinter} elever om vinteren, {antalForår} om foråret, {antalSommer} om sommeren og {antalEfterår} om efteråret");
+        }
+
     }
 }
